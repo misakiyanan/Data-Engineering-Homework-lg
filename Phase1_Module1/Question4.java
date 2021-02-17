@@ -17,7 +17,6 @@ public class Question4 {
 		int[] myArray = new int[initLength];
 
 		System.out.println("现在你拥有了一个容量为"+initLength+"的数组，我们开始游戏吧");
-		boolean isBoundary = false;
 		boolean continueGame = true;
 		int myIndex = 0;
 
