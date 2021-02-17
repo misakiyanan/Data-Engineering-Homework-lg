@@ -11,6 +11,7 @@ import java.util.Random;
 public class Question3 {
 	public static void main(String[] args) {
 		Random rand = new Random();
+
 		int REDBALLS = 6;
 		int BLUEBALLS = 1;
 		int[] redNums = new int[REDBALLS];
@@ -23,12 +24,15 @@ public class Question3 {
 		// Red
 		redNums[0] = rand.nextInt(upperboundRed) + 1;
 		System.out.print("红色球号码：[ " + redNums[0] + " ");
-		for (int i=1; i<redNums.length; i++) {
+		outer: for (int i=1; i<redNums.length; i++) {
 			int randCurrent = rand.nextInt(upperboundRed) + 1;
 
 			// check if already exists
 			for (int j=0; j<i; j++) {
 				if (randCurrent == redNums[j]) {
+					i--;
+					continue outer;
+
 				} else {
 					redNums[i] = randCurrent;
 				}
