@@ -22,9 +22,8 @@ public class Question3 {
 
 
 		// Red
-		redNums[0] = rand.nextInt(upperboundRed) + 1;
-		System.out.print("红色球号码：[ " + redNums[0] + " ");
-		outer: for (int i=1; i<redNums.length; i++) {
+		System.out.print("红色球号码：[ ");
+		outer: for (int i=0; i<redNums.length; i++) {
 			int randCurrent = rand.nextInt(upperboundRed) + 1;
 
 			// check if already exists
