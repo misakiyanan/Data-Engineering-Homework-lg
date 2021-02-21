@@ -86,7 +86,7 @@ public class Question2 {
    // check if current chessman wins
 	public static boolean checkIfWin(int chessMan) {
 		String currentChess = chessMan==1? BLACK_CHESS: WHITE_CHESS;
-		String currentColorName = chessMan==1? "黑": "白";
+		// String currentColorName = chessMan==1? "黑": "白";
 
 		// horizontal
 		for (int row=0; row<=14; row++) {
@@ -178,6 +178,7 @@ public class Question2 {
 	public static void main(String[] args) {
 		do {
 			continueGame = true;
+			chessMan = 1;
 			System.out.println("【欢迎进入五子棋游戏,加载中...】");
 			boardSetup();
 			boardDisplay();
