@@ -39,7 +39,7 @@ public class Main {
         // set balance
         int balance = 10000;
         mySIM.setBalance(balance);
-        System.out.println(">>> 首次注册用户自动获得"+mySIM.getBalance()+"元余额！");
+        System.out.println(">>> 首次注册用户自动获得"+balance+"元余额！");
         System.out.println();
 
         // display user info
@@ -54,7 +54,7 @@ public class Main {
         System.out.println();
 
         // data plan
-        System.out.println(">>> 假装开始购买通话套餐");
+        System.out.println(">>> 假装开始购买上网套餐");
         DataPlan dataPlan = new DataPlan(2000, 600);
         mySIM.purchasePlan(dataPlan);
         System.out.println();

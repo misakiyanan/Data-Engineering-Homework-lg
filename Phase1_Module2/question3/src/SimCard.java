@@ -80,7 +80,7 @@ public class SimCard {
     public void displayCardInfo() {
         System.out.println("【手机卡信息】");
         System.out.println("卡号：" + getSimNumber());
-        System.out.println("类型：" + getType());
+        System.out.println("类型：" + getType().getCardType());
         System.out.println("用户名：" + getUsername());
         System.out.println("当前余额：" + getBalance());
     }
@@ -91,7 +91,7 @@ public class SimCard {
         setBalance(getBalance() - plan.getMonthlyPrice());
         System.out.println("恭喜你购买成功，"
                         + "已扣除套餐费用" + plan.getMonthlyPrice()+"元，"
-                        + "当前账户余额！" + getBalance()+"元");
+                        + "当前账户余额" + getBalance()+"元");
         setTotalAmount(getTotalAmount() + plan.getMonthlyPrice());
     }
 }
