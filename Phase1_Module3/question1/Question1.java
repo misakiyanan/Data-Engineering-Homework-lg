@@ -1,5 +1,5 @@
-/**
- * @author: xie yanan
+/*
+  @author: xie yanan
  * 1. 编程题
  *  编程统计字符串"ABCD123!@#$%ab"中大写字母、小写字母、数字、其它字符的个数并打印出来。
  */
@@ -20,23 +20,27 @@ public class Question1 {
         String specialChar = "^[^A-Za-z0-9]$";
 
         String outputMsg = "该字符为";
+        String type = "";
 
         if (subStr.matches(upperChar)) {
             upperCharCount += 1;
-            System.out.println(outputMsg + "大写字母");
+            type += "大写字母";
+
         }
         if (subStr.matches(lowerChar)) {
             lowerCharCount += 1;
-            System.out.println(outputMsg + "小写字母");
+            type += "小写字母";
         }
         if (subStr.matches(digitChar)) {
             digitCharCount += 1;
-            System.out.println(outputMsg + "数字");
+            type += "数字";
         }
         if (subStr.matches(specialChar)) {
             specialCharCount += 1;
-            System.out.println(outputMsg + "其他字符");
+            type += "其他字符";
         }
+
+        System.out.println(outputMsg + type);
     }
 
     public static void charStats(String str) {
@@ -48,8 +52,7 @@ public class Question1 {
             // Character.toString is a static method ...
         }
 
-        System.out.println("\n>>>统计结果：");
-
+        System.out.println("\n【统计结果】");
         System.out.println("大写字母个数：" + upperCharCount);
         System.out.println("小写字母个数：" + lowerCharCount);
         System.out.println("数字个数：" + digitCharCount);
