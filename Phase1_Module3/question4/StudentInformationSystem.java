@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentInformationSystem {
-    List<Student> allStudents = new ArrayList<> ();
+    private List<Student> allStudents = new ArrayList<> ();
 
     // check if a student already exists and overload
     public boolean ifExists(Student student) {
@@ -20,7 +20,7 @@ public class StudentInformationSystem {
     // get a student by ID
     public Student getByID(int studentID) {
         Student tempStudent = new Student();
-        tempStudent.setStudentID(studentID);
+        //tempStudent.setStudentID(studentID);
         for (Student oneStudent : allStudents) {
             if (oneStudent.getStudentID() == studentID) {
                 return oneStudent;
