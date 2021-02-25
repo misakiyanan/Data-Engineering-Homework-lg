@@ -18,8 +18,7 @@ public class Question2Optimised {
 
 
         // max count of possible common substrings
-        final int MAX_POSSIBLE_COUNT =
-                (1 + shorterString.length()) * shorterString.length() / 2;
+        final int MAX_POSSIBLE_COUNT = shorterString.length();
         String[] results = new String[MAX_POSSIBLE_COUNT];
         int resultIndex = 0;
 
@@ -53,8 +52,8 @@ public class Question2Optimised {
     }
 
     public static void main(String[] args) {
-        //String[] results = fingLargestCommonString("asdafghjka", "aaasdfg");
-        String[] results = fingLargestCommonString("asgbkm", "asg00bkm");
+        String[] results = fingLargestCommonString("asdafghjka", "aaasdfg");
+        //String[] results = fingLargestCommonString("asgbkm", "asg00bkm");
 
         for (String result : results) {
             if (null != result) {
