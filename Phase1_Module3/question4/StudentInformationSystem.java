@@ -31,11 +31,8 @@ public class StudentInformationSystem {
 
 
     // add a student
-    public void addStudent(Student student) {
-        if (ifExists(student)) {
-            System.out.println(">>> 该学号的学生已存在，不可重复添加");
-            return;
-        }
+    public void addStudent(int studentID, String studentName, int studentAge) {
+        Student student = new Student(studentID, studentName, studentAge);
         if (allStudents.add(student)) {
             System.out.println(">>> 已成功添加当前学生");
         }
@@ -57,14 +54,7 @@ public class StudentInformationSystem {
 
     // update a student
     public void updateStudent(int oldStudentID, int newStudentID, String newName, int newAge) {
-        if (!ifExists(oldStudentID)) {
-            System.out.println("该学号的学生不存在，无法进行修改操作");
-            return;
-        }
         Student currentStudent = getByID(oldStudentID);
-        System.out.println(">>> 当前学生信息");
-        System.out.println(currentStudent);
-
         currentStudent.setStudentID(newStudentID);
         currentStudent.setName(newName);
         currentStudent.setAge(newAge);
@@ -96,4 +86,5 @@ public class StudentInformationSystem {
             System.out.println(student);
         }
     }
+
 }
