@@ -17,7 +17,6 @@ public class UserInterface {
                          + "   【3】 修改学生信息   "
                          + "   【4】 查找学生信息\n"
                          + "   【5】 显示所有学生信息"
-//                         + "   【6】 退出系统"
         );
         return sc.nextInt();
     }
@@ -127,16 +126,11 @@ public class UserInterface {
         if (selection == 3) {updateStudent("修改");}
         if (selection == 4) {queryStudent("查询");}
         if (selection == 5) {displayAllStudents();}
-//        if (selection == 6) {exitSystem();}
     }
 
     // run system
     public void run() {
-//        do {
-//            switchPage(selectOperation());
-//        } while (nextOperationPrompt() == 7);
-//        exitSystem();
-
+        welcome();
         while(true) {
             switchPage(selectOperation());
             if (nextOperationPrompt() == 7) {
