@@ -41,10 +41,6 @@ public class StudentInformationSystem {
 
     // delete a student
     public void deleteStudent(int studentID) {
-        if (!ifExists(studentID)) {
-            System.out.println(">>> 该学号的学生不存在,无法进行删除操作");
-            return;
-        }
         Student student = getByID(studentID);
         if (allStudents.remove(student)) {
             System.out.println(">>> 已成功删除当前学生");
@@ -65,10 +61,6 @@ public class StudentInformationSystem {
 
     // query a student by ID
     public void queryStudent(int studentID) {
-        if (!ifExists(studentID)) {
-            System.out.println("该学号的学生不存在");
-            return;
-        }
         Student student = getByID(studentID);
         System.out.println(">>> 查询结果");
         System.out.println(student);

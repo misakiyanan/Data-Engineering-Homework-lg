@@ -8,14 +8,6 @@ package question4;
 
 public class Main {
     public static void main(String[] args) {
-//        StudentInformationSystem infosys = new StudentInformationSystem();
-//        infosys.getAllStudents();
-//        Student s1 = new Student(23, "agwe",1342);
-//        infosys.addStudent(s1);
-//        infosys.getAllStudents();
-//        infosys.queryStudent(1342);
-//        Student s2 = new Student(23, "agwdage",123342);
-//        infosys.deleteStudent(23);
         UserInterface myUI = new UserInterface();
         myUI.run();
     }
