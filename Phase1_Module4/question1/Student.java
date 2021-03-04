@@ -1,0 +1,78 @@
+package question1;
+
+/**
+ * 编程实现学生类的封装
+ */
+public class Student implements java.io.Serializable{
+
+    private static final long serialVersionUID = -4784382821484710330L;
+    private int id;      // 用于描述学号的成员变量
+    private String name; // 用于描述姓名的成员变量
+    private int age;     // 用于描述年龄的成员变量
+
+    public Student() {
+        super();
+    }
+    public Student(int id, String name, int age) throws InvalidAgeException, InvalidIDException {
+        super();
+        setId(id);
+        setName(name);
+        setAge(age);
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) throws InvalidIDException {
+        if(id > 0){
+            this.id = id;
+        }
+        else{
+            // System.out.println("学号不合理哦！！！");
+            throw new InvalidIDException();
+        }
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) throws InvalidAgeException {
+        if(age >= 4 && age <= 60){
+            this.age = age;
+        }
+        else{
+            // System.out.println("年龄不合理哦！！！");
+            throw new InvalidAgeException();
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Student other = (Student) obj;
+        if (id != other.id)
+            return false;
+        return true;
+    }
+    @Override
+    public String toString() {
+        return "Student [id=" + id + ", name=" + name + ", age=" + age + "]";
+    }
+}
