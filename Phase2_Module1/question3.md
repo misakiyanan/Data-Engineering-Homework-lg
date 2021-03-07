@@ -6,7 +6,7 @@
 
 ```sql
 create database lianxi03 character set utf8;
-use lianxi02;
+use lianxi03;
 ```
 
 #### 1.2 创建学生表、教师表、课程表、学生与课程中间表
