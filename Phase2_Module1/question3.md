@@ -42,6 +42,7 @@ CREATE TABLE student_course(
 	FOREIGN KEY (student_id) REFERENCES student(id),
 	FOREIGN KEY (course_id) REFERENCES course(id)
 );
+
 ```
 
 #### 1.3 插入数据
@@ -174,5 +175,6 @@ select s.name
 from student_enrolment_count as sec
 left join student as s
 on s.id = sec.student_id;
+
 ```
 
