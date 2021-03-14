@@ -1,0 +1,125 @@
+<!-- 题目要求: 
+1.作出如图的展示效果
+2.点击购买加号则数量增加,总价格随之更变 
+3.如果书本数量为1则不能减少
+4.点击移除,删除该行,总价格随之更变
+5.使用VUE + HMLT 实现该案例 -->
+
+
+<!DOCTYPE html>
+  <head>
+    <title>cart</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  
+  <body>
+    <div id="app">
+      <table>
+        <tr>
+          <th> </th>
+          <th> 书籍名称 </th>
+          <th> 出版日期 </th>>
+          <th> 价格 </th>
+          <th> 数量 </th>
+          <th> 操作 </th>
+        </tr>
+        
+        <tr v-for="(book, index) in Books">
+          <td> {{ index+1 }} </td>
+          <td> {{ book.book_name }} </td>
+          <td> {{ book.publication_date }} </td>
+          <td> {{ book.price | currency() }} </td>
+          <td>
+            <button @click="book.count-=1" :disabled="book.count<=1"> - </button>
+            {{ book.count }}
+            <button @click="book.count+=1"> + </button>
+          </td>
+          <td>
+            <button @click.prevent="deleteItem(index)"> 移除 </button>
+          </td>
+        </tr>
+      </table>
+     
+      <p class="totalPrice">
+        总价格: {{ totalPrice()  | currency()}} 
+      </p>
+    </div>
+
+
+    <script>
+      new Vue({
+        el: "#app", 
+
+        filters: {
+          currency(val) {
+            return val.toLocaleString('ja-JP', {
+              style: 'currency',
+              currency: 'JPY',
+              minimumFractionDigits: 2,
+            });
+          }
+        },
+        // https://stackoverflow.com/questions/43208012/how-do-i-format-currencies-in-a-vue-component
+        // https://www.mikestreety.co.uk/blog/vue-js-filters-what-are-they-how-do-you-use-them-and-how-do-you-make-them-video
+
+       
+        data: {            
+            Books: [
+            {
+                id:1,
+                book_name:"《java编程思想》", 
+                publication_date:"2020-09",                   
+                price:98,               
+                count:1                
+            },                
+            {   
+                id:2,                    
+                book_name:"《数据分析与数据原理》", 
+                publication_date:"2019-02",                     
+                price:39,     
+                count:1
+            },                
+            {                    
+                id:3,                    
+                book_name:"《Hadoop权威指南》", 
+                publication_date:"2019-10",                     
+                price:59,  
+                count:1                
+            },                
+            {                    
+                id:4,                    
+                book_name:"《代码大全》", 
+                publication_date:"2018-08",                     
+                price:128, 
+                count:1                
+            }            
+            ]        
+            }, 
+
+            methods: {            
+                totalPrice: function() {                
+                    var total_price = 0;                
+                    for (var i=0; i<this.Books.length; i++){                    
+                        total_price += this.Books[i].price*this.Books[i].count;
+                      }                
+                    return total_price            
+                }, 
+
+                deleteItem: function(index) {
+                  if(confirm("是否确认删除该商品？")){
+                    this.Books.splice(index,1);
+                  }
+                }
+            }    
+    })
+
+    </script>
+
+  </body>
+
+</html>
+
+
+
+

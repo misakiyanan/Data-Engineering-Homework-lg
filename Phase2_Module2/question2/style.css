@@ -1,0 +1,27 @@
+* {
+    font-family: Microsoft YaHei;
+    font-size: 14px;
+}
+
+table {
+    width: 35%;
+    border-collapse: collapse;
+    border: solid 1px #ddd;
+}
+
+th {
+    height: 50px;
+    background-color: #f7f7f7;
+    text-align: left;
+    font-weight: bold;
+}
+
+th,td {
+    border: solid 1px #ddd;
+}
+
+.totalPrice {
+    font-size: 20px;
+    font-weight: bold;
+}
+
